@@ -17,7 +17,7 @@ int makeTable(int compr, int yardr, int tdr, int intr, int nrows) {
 
 int sendTen(int i){
 	int ii = 0;
-	ii = topqbs[i]*7+1;
+	ii = topqbs[i]*9+1;
 	return gamedata[ii];
 }
 
