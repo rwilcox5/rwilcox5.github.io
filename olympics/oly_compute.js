@@ -52,40 +52,21 @@ function myDefault(){
   document.getElementById('wWater').value = 10;
 }
 
-function editAquatics(){
-  document.getElementById('editAquatics').style.display = "block";
-  document.getElementById('editAthletics').style.display = "none";
-  document.getElementById('editTeam').style.display = "none";
-  document.getElementById('editCombat').style.display = "none";
-  document.getElementById('editWeapons').style.display = "none";
-}
-function editAthletics(){
-  document.getElementById('editAthletics').style.display = "block";
-  document.getElementById('editAquatics').style.display = "none";
-  document.getElementById('editTeam').style.display = "none";
-  document.getElementById('editCombat').style.display = "none";
-  document.getElementById('editWeapons').style.display = "none";
-}
-function editTeam(){
-  document.getElementById('editTeam').style.display = "block";
-  document.getElementById('editAthletics').style.display = "none";
-  document.getElementById('editAquatics').style.display = "none";
-  document.getElementById('editCombat').style.display = "none";
-  document.getElementById('editWeapons').style.display = "none";
-}
-function editCombat(){
-  document.getElementById('editCombat').style.display = "block";
-  document.getElementById('editWeapons').style.display = "none";
-  document.getElementById('editTeam').style.display = "none";
-  document.getElementById('editAthletics').style.display = "none";
-  document.getElementById('editAquatics').style.display = "none";
-}
-function editWeapons(){
-  document.getElementById('editWeapons').style.display = "block";
-  document.getElementById('editCombat').style.display = "none";
-  document.getElementById('editTeam').style.display = "none";
-  document.getElementById('editAthletics').style.display = "none";
-  document.getElementById('editAquatics').style.display = "none";
-}
 
+function editField(chgField,chgSport){
+  document.getElementById('editWeapons').style.display = "none";
+  document.getElementById('editCombat').style.display = "none";
+  document.getElementById('editTeam').style.display = "none";
+  document.getElementById('editAthletics').style.display = "none";
+  document.getElementById('editAquatics').style.display = "none";
+  
+  document.getElementById('editSwimming').style.display = "none";
+  document.getElementById('editSprints').style.display = "none";
+  document.getElementById('editField').style.display = "none";
+  document.getElementById('editFencing').style.display = "none";
+  document.getElementById('editArchery').style.display = "none";
+  document.getElementById(chgField).style.display = "block";
+  document.getElementById(chgSport).style.display = "block";
+
+}
 
