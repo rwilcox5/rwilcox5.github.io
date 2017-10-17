@@ -256,7 +256,9 @@
       g_map_stateMap["WV"].addInfoBoxText("Capital: Charleston");
       g_map_stateMap["WI"].addInfoBoxText("Capital: Madison");
       g_map_stateMap["WY"].addInfoBoxText("Capital: Cheyenne");
-      g_map_stateMap["CA"].myBaseRGB = [0,0,255];
+      allcolors = [[0,0,255],[255,0,0]];
+      g_map_stateMap["CA"].myBaseRGB = allcolors[0];
+      g_map_stateMap["NY"].myBaseRGB = allcolors[1];
 
 
       //
