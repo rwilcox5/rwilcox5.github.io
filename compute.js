@@ -31,16 +31,17 @@ loadModule('compute.wasm').then(instance => {
       intr = document.getElementById('intWeight').value;
       nrows = document.getElementById('nRows').value;
       minAtt = document.getElementById('minAtt').value;
-      minComp = document.getElementById('compMin').value*10;
-      maxComp = document.getElementById('compMax').value*10;
-      minYards = document.getElementById('yardsMin').value*10;
-      maxYards = document.getElementById('yardsMax').value*10;
-      minInt = document.getElementById('intMin').value*10;
-      maxInt = document.getElementById('intMax').value*10;
-      minTd = document.getElementById('tdMin').value*10;
-      maxTd = document.getElementById('tdMax').value*10;
+      minComp = document.getElementById('compMin').value*100;
+      maxComp = document.getElementById('compMax').value*100;
+      minYards = document.getElementById('yardsMin').value*100;
+      maxYards = document.getElementById('yardsMax').value*100;
+      minInt = document.getElementById('intMin').value*100;
+      maxInt = document.getElementById('intMax').value*100;
+      minTd = document.getElementById('tdMin').value*100;
+      maxTd = document.getElementById('tdMax').value*100;
       lengthType = document.getElementById('lengthType').value;
-      makeTable(compr,yardr,tdr,intr,nrows,minAtt,minComp,maxComp,minYards,maxYards,minInt,maxInt,minTd,maxTd,lengthType);
+      nweeks = document.getElementById('nweeks').value;
+      makeTable(compr,yardr,tdr,intr,nrows,minAtt,minComp,maxComp,minYards,maxYards,minInt,maxInt,minTd,maxTd,lengthType,nweeks);
       retdouble = sendTen(5,0);
       var table = document.getElementById("myTable");
       var ii = 0;
@@ -48,7 +49,7 @@ loadModule('compute.wasm').then(instance => {
         table.insertRow(i); 
         table.rows[i].insertCell(0); table.rows[i].cells[0].innerHTML = sendTen(7,i,lengthType);
         for (ii=0;ii<6;ii++){table.rows[i].insertCell(ii+1); table.rows[i].cells[ii+1].innerHTML = sendTen(ii,i,lengthType);}
-        table.rows[i].insertCell(6); table.rows[i].cells[6].innerHTML = sendTen(6,i,lengthType)*1./10.;
+        table.rows[i].insertCell(6); table.rows[i].cells[6].innerHTML = (sendTen(6,i,lengthType)*1./100).toFixed(1);
 
       }
 
