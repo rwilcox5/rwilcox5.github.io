@@ -148,7 +148,88 @@
     </nav>
 
 
-    
+    <form>
+    <div class="row">
+      <div class="two columns">
+        <label for="exampleEmailInput">Min Atts</label>
+        <input class="u-full-width" id="minAtt" value="1"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">Comp Weight</label>
+        <input class="u-full-width" id="compWeight" value="10"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">Yards Weight</label>
+        <input class="u-full-width" id="yardsWeight" value="50"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">TD Weight</label>
+        <input class="u-full-width" id="tdWeight" value="40"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">INT Weight</label>
+        <input class="u-full-width" id="intWeight" value="50"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">Num Disp</label>
+        <input class="u-full-width" id="nRows" value="10"></input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="one column">
+        <input class="u-full-width" id="compMin" value="30"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">&lt; Comp % &lt;</label>
+      </div>
+      <div class="one column">
+        <input class="u-full-width" id="compMax" value="77.5"></input>
+      </div>
+      <div class="one column">
+        <input class="u-full-width" id="intMin" value="0"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">&lt; INT % &lt;</label>
+      </div>
+      <div class="one column">
+        <input class="u-full-width" id="intMax" value="9.5"></input>
+      </div>
+      <div class="one column">
+        <input class="u-full-width" id="yardsMin" value="3"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">&lt; Yards PA &lt;</label>
+      </div>
+      <div class="one column">
+        <input class="u-full-width" id="yardsMax" value="12.5"></input>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="one column">
+        <input class="u-full-width" id="tdMin" value="0"></input>
+      </div>
+      <div class="two columns">
+        <label for="exampleEmailInput">&lt; TD % &lt;</label>
+      </div>
+      <div class="one column">
+        <input class="u-full-width" id="tdMax" value="11.875"></input>
+      </div>
+      <div class="eight columns">
+        <select class="u-full-width" id="lengthType">
+          <option value="1">Game</option>
+          <option value="2" selected>Season</option>
+          <option value="3">Career</option>
+          <option value="4">First 6 weeks</option>
+        </select>
+      </div>
+    </div>
+    </form>
+    <button class="button-primary" onclick="nflDefault();">NFL</button>
+    <button class="button-primary" onclick="ncaaDefault();">NCAA</button>
+    <button class="button-primary" onclick="runRating();">Generate</button>
+    <table id="myTable">
+    </table>
   </div>
 
     <script src="compute.js"></script>
