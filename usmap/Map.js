@@ -1245,7 +1245,7 @@ g_map_stateMap["WY"] = theStateArray[50];
 theStateArray[50].myPolygons.push( new map_Polygon() );
 theStateArray[50].myPolygons[0].myXVals=[297,297,206,206,232];
 theStateArray[50].myPolygons[0].myYVals=[380,324,324,380,380];
-for(iii=0;iii<52;iii++){
+for(iii=0;iii<51;iii++){
 for(ii=0;ii<theStateArray[iii].myPolygons.length;ii++){
 for(i=0;i<theStateArray[iii].myPolygons[ii].myYVals.length;i++){theStateArray[iii].myPolygons[ii].myYVals[i]*=1.1;}
 }

@@ -256,9 +256,65 @@
       g_map_stateMap["WV"].addInfoBoxText("Capital: Charleston");
       g_map_stateMap["WI"].addInfoBoxText("Capital: Madison");
       g_map_stateMap["WY"].addInfoBoxText("Capital: Cheyenne");
-      allcolors = [[0,0,255],[255,0,0]];
-      g_map_stateMap["CA"].myBaseRGB = allcolors[0];
-      g_map_stateMap["NY"].myBaseRGB = allcolors[1];
+
+      	allcolors = [];
+	for (i=0;i<51;i++){allcolors.push([0,0,5*i]);}
+
+      	g_map_stateMap["AK"].myBaseRGB = allcolors[0];
+	g_map_stateMap["AL"].myBaseRGB = allcolors[1];
+	g_map_stateMap["AZ"].myBaseRGB = allcolors[2];
+	g_map_stateMap["AR"].myBaseRGB = allcolors[3];
+	g_map_stateMap["CA"].myBaseRGB = allcolors[4];
+	g_map_stateMap["CO"].myBaseRGB = allcolors[5];
+	g_map_stateMap["CT"].myBaseRGB = allcolors[6];
+      	g_map_stateMap["DC"].myBaseRGB = allcolors[7];
+	g_map_stateMap["DE"].myBaseRGB = allcolors[8];
+	g_map_stateMap["FL"].myBaseRGB = allcolors[9];
+
+	g_map_stateMap["GA"].myBaseRGB = allcolors[10];
+	g_map_stateMap["HI"].myBaseRGB = allcolors[11];
+	g_map_stateMap["IA"].myBaseRGB = allcolors[12];
+	g_map_stateMap["ID"].myBaseRGB = allcolors[13];
+	g_map_stateMap["IL"].myBaseRGB = allcolors[14];
+	g_map_stateMap["IN"].myBaseRGB = allcolors[15];
+	g_map_stateMap["KS"].myBaseRGB = allcolors[16];
+	g_map_stateMap["KY"].myBaseRGB = allcolors[17];
+	g_map_stateMap["LA"].myBaseRGB = allcolors[18];
+	g_map_stateMap["MA"].myBaseRGB = allcolors[19];
+
+	g_map_stateMap["MD"].myBaseRGB = allcolors[20];
+	g_map_stateMap["ME"].myBaseRGB = allcolors[21];
+	g_map_stateMap["MI"].myBaseRGB = allcolors[22];
+	g_map_stateMap["MN"].myBaseRGB = allcolors[23];
+	g_map_stateMap["MO"].myBaseRGB = allcolors[24];
+	g_map_stateMap["MS"].myBaseRGB = allcolors[25];
+	g_map_stateMap["MT"].myBaseRGB = allcolors[26];
+	g_map_stateMap["NC"].myBaseRGB = allcolors[27];
+	g_map_stateMap["ND"].myBaseRGB = allcolors[28];
+	g_map_stateMap["NE"].myBaseRGB = allcolors[29];
+
+	g_map_stateMap["NH"].myBaseRGB = allcolors[30];
+	g_map_stateMap["NJ"].myBaseRGB = allcolors[31];
+	g_map_stateMap["NM"].myBaseRGB = allcolors[32];
+	g_map_stateMap["NV"].myBaseRGB = allcolors[33];
+	g_map_stateMap["NY"].myBaseRGB = allcolors[34];
+	g_map_stateMap["OH"].myBaseRGB = allcolors[35];
+	g_map_stateMap["OK"].myBaseRGB = allcolors[36];
+	g_map_stateMap["OR"].myBaseRGB = allcolors[37];
+	g_map_stateMap["PA"].myBaseRGB = allcolors[38];
+	g_map_stateMap["RI"].myBaseRGB = allcolors[39];
+
+	g_map_stateMap["SC"].myBaseRGB = allcolors[40];
+	g_map_stateMap["SD"].myBaseRGB = allcolors[41];
+	g_map_stateMap["TN"].myBaseRGB = allcolors[42];
+	g_map_stateMap["TX"].myBaseRGB = allcolors[43];
+	g_map_stateMap["UT"].myBaseRGB = allcolors[44];
+	g_map_stateMap["VA"].myBaseRGB = allcolors[45];
+	g_map_stateMap["VT"].myBaseRGB = allcolors[46];
+	g_map_stateMap["WA"].myBaseRGB = allcolors[47];
+	g_map_stateMap["WI"].myBaseRGB = allcolors[48];
+	g_map_stateMap["WV"].myBaseRGB = allcolors[49];
+	g_map_stateMap["WY"].myBaseRGB = allcolors[50];
 
 
       //
