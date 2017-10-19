@@ -45,7 +45,7 @@
 //
 //  if called before the canvas is available an error will occur.
 //  ------------
-function map_main()
+function map_main(stateColors)
 {
    if (!map_initCanvas())
    {
@@ -56,7 +56,7 @@ function map_main()
    if ( agent.indexOf("MSIE") != -1 )
       g_map_isIE9 = true;
 
-   map_startRenderLoop();
+   map_startRenderLoop(stateColors);
 
    g_map_canvas.addEventListener('mousemove', map_mousemove, false);
    g_map_canvas.addEventListener('mousedown', map_mousedown, false);
@@ -175,10 +175,10 @@ function map_initCanvas()
    return true;
 }
 
-function map_startRenderLoop()
+function map_startRenderLoop(stateColors)
 {
    map_createStateData();
-   map_userSetup();
+   map_userSetup(stateColors);
    g_map_context.fillStyle = g_map_backgroundColor;
    g_map_context.fillRect(0,0,g_map_canvas.width,g_map_canvas.height);
    g_map_renderInterval = setInterval(map_renderLoop, 10);
@@ -327,7 +327,7 @@ function map_State(abbrev, capsName, prettyName)
 
    this.myClickCallback = null;
 
-   this.myInfoBoxOrigin = [525,290];
+   this.myInfoBoxOrigin = [100,490];
    this.myInfoBoxWidth  = 174;
    this.myInfoBoxHeight = 160;
 
@@ -1810,9 +1810,24 @@ theStateArray[174].myPolygons.push( new map_Polygon() );
 theStateArray[174].myPolygons[1].myXVals= [1635, 1636, 1635, 1633, 1633, 1633, 1635] ;
 theStateArray[174].myPolygons[1].myYVals= [425, 421, 421, 421, 423, 426, 425] ;
 
-for(iii=0;iii<3;iii++){
+for(iii=0;iii<175;iii++){
 for(ii=0;ii<theStateArray[iii].myPolygons.length;ii++){
-for(i=0;i<theStateArray[iii].myPolygons[ii].myYVals.length;i++){theStateArray[iii].myPolygons[ii].myYVals[i]*=1;}
+for(i=0;i<theStateArray[iii].myPolygons[ii].myYVals.length;i++){theStateArray[iii].myPolygons[ii].myYVals[i]-=210;}
+}
+}
+for(iii=0;iii<175;iii++){
+for(ii=0;ii<theStateArray[iii].myPolygons.length;ii++){
+for(i=0;i<theStateArray[iii].myPolygons[ii].myXVals.length;i++){theStateArray[iii].myPolygons[ii].myXVals[i]+=110;}
+}
+}
+for(iii=0;iii<175;iii++){
+for(ii=0;ii<theStateArray[iii].myPolygons.length;ii++){
+for(i=0;i<theStateArray[iii].myPolygons[ii].myYVals.length;i++){theStateArray[iii].myPolygons[ii].myYVals[i]*=(window.innerWidth-100.)*1./1820.;}
+}
+}
+for(iii=0;iii<175;iii++){
+for(ii=0;ii<theStateArray[iii].myPolygons.length;ii++){
+for(i=0;i<theStateArray[iii].myPolygons[ii].myXVals.length;i++){theStateArray[iii].myPolygons[ii].myXVals[i]*=(window.innerWidth-100.)*1./1820.;}
 }
 }
 }

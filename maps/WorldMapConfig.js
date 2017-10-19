@@ -40,11 +40,12 @@
    // state see section 2.
    //
 
-   var g_map_backgroundColor = "black";        // background to draw map on
-   var g_map_borderColor = "white";            // state border color  
+
+   var g_map_backgroundColor = "white";        // background to draw map on
+   var g_map_borderColor = "black";            // state border color  
    var g_map_highlightBorderColor = "yellow";  // highlighted state border color
 
-   var g_map_baseRGB = [128,128,128];          // state color default
+   var g_map_baseRGB = [255,255,255];          // state color default
    var g_map_highlightRGB = [0,100,200];       // state color when highlighted
 
    var g_map_infoBoxFillRGB   = [0,0,0];       // info box background color
@@ -134,7 +135,7 @@
    // right here and they will show up on the map. 
    //
 
-   function map_userSetup()
+   function map_userSetup(stateColors)
    {
 
       //
@@ -146,16 +147,33 @@
       //
       for ( var abbrev in g_map_stateMap )
       {
+         
          var state = g_map_stateMap[abbrev]; 
          var nameAndAbbrev = state.myPrettyName + "  (" + state.myAbbrev + ")";
 
          state.setInfoBoxText(nameAndAbbrev);
          state.addInfoBoxText(""); // add a blank line
+         if (abbrev in stateColors){ 
+         var ngold = stateColors[abbrev].gold;
+
+         var ngoldstr = ngold.toString()+' Gold';
+         var nsilver = stateColors[abbrev].silver;
+         var nsilverstr = nsilver.toString()+' Silver';
+         var nbronze = stateColors[abbrev].bronze;
+         var nbronzestr = nbronze.toString()+' Bronze';
+         state.addInfoBoxText(ngoldstr);
+         state.addInfoBoxText(nsilverstr);
+         state.addInfoBoxText(nbronzestr);
+         state.myBaseRGB = [255,stateColors[abbrev].points,stateColors[abbrev].points];
+         }
+         else{
+          state.myBaseRGB = [255,255,255];  
+         }
       }
 
       
 
-      g_map_stateMap["CUB"].myBaseRGB = [0,0,255];
+
 
 
       //
