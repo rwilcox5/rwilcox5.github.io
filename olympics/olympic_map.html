@@ -43,7 +43,7 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body class="code-snippets-visible" onload="map_main({});">
+<body class="code-snippets-visible" onload="map_main({'base1':255,'base2':255,'base3':255,'max1':0,'max2':0,'max3':0});">
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -154,26 +154,26 @@
       </div>
     </nav>
     
-    <form>
+        <form>
     <div class="row">
       <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editAquatics','editAquatics');" href="#editAquatics">Aquatics</a></label>
-        <input class="u-full-width" id="wAqua" value="15"></input>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editAquatics','editAquatics');" href="#">Aquatics</a></label>
+        <input class="u-full-width" id="wAquatics" value="15"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editAthletics','editAthletics');" href="#editAthletics">Athletics</a></label>
-        <input class="u-full-width" id="wAth" value="20"></input>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editAthletics','editAthletics');" href="#">Athletics</a></label>
+        <input class="u-full-width" id="wAthletics" value="20"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editTeam','editTeam');" href="#editTeam">Team Sports</a></label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editTeam','editTeam');" href="#">Team Sports</a></label>
         <input class="u-full-width" id="wTeam" value="15"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editCombat','editCombat');" href="#editCombat">Combat</a></label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editCombat','editCombat');" href="#">Combat</a></label>
         <input class="u-full-width" id="wCombat" value="10"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editWeapons','editWeapons');" href="#editWeapons">Weapons</a></label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editWeapons','editWeapons');" href="#">Weapons</a></label>
         <input class="u-full-width" id="wWeapons" value="5"></input>
       </div>
       <div class="two columns">
@@ -182,23 +182,23 @@
     </div>
     <div class="row">
       <div class="two columns">
-        <label for="exampleEmailInput">Gymnastics</label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editGym','editGym');" href="#">Gymnastics</a></label>
         <input class="u-full-width" id="wGym" value="10"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput">Watercraft</label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editWater','editWater');" href="#">Watercraft</a></label>
         <input class="u-full-width" id="wWater" value="10"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput">Riding</label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editRiding','editRiding');" href="#">Riding</a></label>
         <input class="u-full-width" id="wRiding" value="5"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput">Raquet Sports</label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editRaquet','editRaquet');" href="#">Raquet Sports</a></label>
         <input class="u-full-width" id="wRaquet" value="5"></input>
       </div>
       <div class="two columns">
-        <label for="exampleEmailInput">Multiple</label>
+        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editMultiple','editMultiple');" href="#">Multiple</a></label>
         <input class="u-full-width" id="wMultiple" value="5"></input>
       </div>
       <div class="two columns">
@@ -206,237 +206,269 @@
       </div>
     </div>
     <div class="row hiddenSport" id="editAquatics">
-      <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editSwimming','editAquatics');" href="#editSwimming">Swimming</a></label>
-        <input class="u-full-width" id="wSwimming" value="50"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Diving</label>
-        <input class="u-full-width" id="wDiving" value="16"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">10 KM Swim</label>
-        <input class="u-full-width" id="wMarathonSwim" value="16"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Water Polo</label>
-        <input class="u-full-width" id="wPolo" value="17"></input>
-      </div>
-      <div class="four columns">
-        <label for="exampleEmailInput"></label>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editSwimming">
-      <div class="two columns">
-        <label for="exampleEmailInput">Backstroke</label>
-        <input class="u-full-width" id="wBack" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Breaststroke</label>
-        <input class="u-full-width" id="wBreast" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Butterfly</label>
-        <input class="u-full-width" id="wButter" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Freestyle</label>
-        <input class="u-full-width" id="wFree" value="35"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Medley</label>
-        <input class="u-full-width" id="wMedley" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput"></label>
-      </div>
-
-    </div>
-    <div class="row hiddenSport" id="editAthletics">
-      <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editSprints','editAthletics');" href="#editSprints">Sprints</a></label>
-        <input class="u-full-width" id="wSprints" value="30"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Distance</label>
-        <input class="u-full-width" id="wDistance" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editField','editAthletics');" href="#editField">Field</a></label>
-        <input class="u-full-width" id="wField" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Weightlifting</label>
-        <input class="u-full-width" id="wLifting" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Jumps</label>
-        <input class="u-full-width" id="wJumps" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Walking</label>
-        <input class="u-full-width" id="wWalking" value="5"></input>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editSprints">
-      <div class="two columns">
-        <label for="exampleEmailInput">Sprints</label>
-        <input class="u-full-width" id="wRuns" value="40"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Hurdles</label>
-        <input class="u-full-width" id="wHurdles" value="26"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Relays</label>
-        <input class="u-full-width" id="wRelays" value="34"></input>
-      </div>
-      <div class="six columns">
-        <label for="exampleEmailInput"></label>
-      </div>
-
-    </div>
-    <div class="row hiddenSport" id="editField">
-      <div class="two columns">
-        <label for="exampleEmailInput">Decathlon</label>
-        <input class="u-full-width" id="wDecathlon" value="40"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Shot Put</label>
-        <input class="u-full-width" id="wShot" value="12"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Hammer Throw</label>
-        <input class="u-full-width" id="wHammer" value="12"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Discus Throw</label>
-        <input class="u-full-width" id="wDiscus" value="12"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Javelin</label>
-        <input class="u-full-width" id="wJavelin" value="12"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Pole Vault</label>
-        <input class="u-full-width" id="wPole" value="12"></input>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editTeam">
-      <div class="two columns">
-        <label for="exampleEmailInput">Basketball</label>
-        <input class="u-full-width" id="wBasket" value="25"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Football</label>
-        <input class="u-full-width" id="wFoot" value="25"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Handball</label>
-        <input class="u-full-width" id="wHand" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Hockey</label>
-        <input class="u-full-width" id="wHockey" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Volleyball</label>
-        <input class="u-full-width" id="wVolley" value="10"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Beach</label>
-        <input class="u-full-width" id="wBeach" value="10"></input>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editCombat">
-      <div class="two columns">
-        <label for="exampleEmailInput">Judo</label>
-        <input class="u-full-width" id="wJudo" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Taekwondo</label>
-        <input class="u-full-width" id="wTaekwondo" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editFencing','editCombat');" href="#editFencing">Fencing</a></label>
-        <input class="u-full-width" id="wFencing" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Wrestling</label>
-        <input class="u-full-width" id="wWrestling" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Boxing</label>
-        <input class="u-full-width" id="wBoxing" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput"></label>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editFencing">
-      <div class="two columns">
-        <label for="exampleEmailInput">Epee Ind</label>
-        <input class="u-full-width" id="wEpeeInd" value="13"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Epee Team</label>
-        <input class="u-full-width" id="wEpeeTeam" value="21"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Foil Ind</label>
-        <input class="u-full-width" id="wFoilInd" value="13"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Foil Team</label>
-        <input class="u-full-width" id="wFoilTeam" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Sabre Ind</label>
-        <input class="u-full-width" id="wSabreInd" value="13"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Sabre Team</label>
-        <input class="u-full-width" id="wSabreTeam" value="20"></input>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editWeapons">
-      <div class="two columns">
-        <label for="exampleEmailInput"><a class="button-primary" onclick="editField('editArchery','editWeapons');" href="#editArchery">Archery</a></label>
-        <input class="u-full-width" id="wArchery" value="35"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Pistol</label>
-        <input class="u-full-width" id="wPistol" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Rifle</label>
-        <input class="u-full-width" id="wRifle" value="20"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Skeet</label>
-        <input class="u-full-width" id="wSkeet" value="10"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Trap</label>
-        <input class="u-full-width" id="wTrap" value="15"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput"></label>
-      </div>
-    </div>
-    <div class="row hiddenSport" id="editArchery">
-      <div class="two columns">
-        <label for="exampleEmailInput">Individual</label>
-        <input class="u-full-width" id="wArcheryInd" value="40"></input>
-      </div>
-      <div class="two columns">
-        <label for="exampleEmailInput">Team</label>
-        <input class="u-full-width" id="wArcheryTeam" value="60"></input>
-      </div>
-      <div class="eight columns">
-        <label for="exampleEmailInput"></label>
-      </div>
-    </div>
+<div class="two columns">
+<label for="exampleEmailInput"><a class="button-primary" onclick="editField('editSwimming','editAquatics');" href="#">Swimming</a></label>
+<input class="u-full-width" id="wSwimming" value="50"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Diving</label>
+<input class="u-full-width" id="wDiving" value="16"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">10 KM Swim</label>
+<input class="u-full-width" id="wMarathonSwim" value="16"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Water Polo</label>
+<input class="u-full-width" id="wPolo" value="17"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editAthletics">
+<div class="two columns">
+<label for="exampleEmailInput"><a class="button-primary" onclick="editField('editSprints','editAthletics');" href="#">Sprints</a></label>
+<input class="u-full-width" id="wSprints" value="30"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Distance</label>
+<input class="u-full-width" id="wDistance" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput"><a class="button-primary" onclick="editField('editField','editAthletics');" href="#">Field</a></label>
+<input class="u-full-width" id="wField" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Weight Lifting</label>
+<input class="u-full-width" id="wLifting" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Jumps</label>
+<input class="u-full-width" id="wJumps" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Walking</label>
+<input class="u-full-width" id="wWalking" value="5"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editTeam">
+<div class="two columns">
+<label for="exampleEmailInput">Basketball</label>
+<input class="u-full-width" id="wBasket" value="25"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Football</label>
+<input class="u-full-width" id="wFoot" value="25"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Handball</label>
+<input class="u-full-width" id="wHand" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Hockey</label>
+<input class="u-full-width" id="wHockey" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Volleyball</label>
+<input class="u-full-width" id="wVolley" value="10"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Beach Volleyball</label>
+<input class="u-full-width" id="wBeach" value="10"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editCombat">
+<div class="two columns">
+<label for="exampleEmailInput">Judo</label>
+<input class="u-full-width" id="wJudo" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Taekwondo</label>
+<input class="u-full-width" id="wTaekwondo" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Fencing</label>
+<input class="u-full-width" id="wFencing" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Wrestling</label>
+<input class="u-full-width" id="wWrestling" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Boxing</label>
+<input class="u-full-width" id="wBoxing" value="20"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editWeapons">
+<div class="two columns">
+<label for="exampleEmailInput">Archery</label>
+<input class="u-full-width" id="wArchery" value="35"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Pistol</label>
+<input class="u-full-width" id="wPistol" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Rifle</label>
+<input class="u-full-width" id="wRifle" value="20"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Skeet</label>
+<input class="u-full-width" id="wSkeet" value="10"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Trap</label>
+<input class="u-full-width" id="wTrap" value="15"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editRaquet">
+<div class="two columns">
+<label for="exampleEmailInput">Tennis</label>
+<input class="u-full-width" id="wTennis" value="40"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Badminton</label>
+<input class="u-full-width" id="wBad" value="30"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Table Tennis</label>
+<input class="u-full-width" id="wTT" value="30"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editRiding">
+<div class="two columns">
+<label for="exampleEmailInput"><a class="button-primary" onclick="editField('editCycling','editRiding');" href="#">Cycling</a></label>
+<input class="u-full-width" id="wCycling" value="50"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Equestrian</label>
+<input class="u-full-width" id="wEquestrian" value="50"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editGym">
+<div class="two columns">
+<label for="exampleEmailInput">Events</label>
+<input class="u-full-width" id="wEvents" value="30"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Team</label>
+<input class="u-full-width" id="wTeamGym" value="36"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">All-Around</label>
+<input class="u-full-width" id="wAround" value="24"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Trampoline</label>
+<input class="u-full-width" id="wTramp" value="10"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editMultiple">
+<div class="two columns">
+<label for="exampleEmailInput">Modern Pentathlon</label>
+<input class="u-full-width" id="wPentathlon" value="60"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Triathlon</label>
+<input class="u-full-width" id="wTriathlon" value="40"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editWater">
+<div class="two columns">
+<label for="exampleEmailInput">Canoe Slalom</label>
+<input class="u-full-width" id="wCanoeSlalom" value="17"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Canoe Sprint</label>
+<input class="u-full-width" id="wCanoeSprint" value="17"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Rowing</label>
+<input class="u-full-width" id="wRowing" value="33"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Sailing</label>
+<input class="u-full-width" id="wSailing" value="33"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editSwimming">
+<div class="two columns">
+<label for="exampleEmailInput">Backstroke</label>
+<input class="u-full-width" id="wBack" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Breaststroke</label>
+<input class="u-full-width" id="wBreast" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Butterfly</label>
+<input class="u-full-width" id="wButter" value="15"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Freestyle</label>
+<input class="u-full-width" id="wFree" value="35"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Medley</label>
+<input class="u-full-width" id="wMedley" value="20"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editSprints">
+<div class="two columns">
+<label for="exampleEmailInput">Sprints</label>
+<input class="u-full-width" id="wRuns" value="40"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Hurdles</label>
+<input class="u-full-width" id="wHurdles" value="26"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Relays</label>
+<input class="u-full-width" id="wRelays" value="34"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editField">
+<div class="two columns">
+<label for="exampleEmailInput">Decathlon</label>
+<input class="u-full-width" id="wDecathlon" value="40"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Shot Put</label>
+<input class="u-full-width" id="wShot" value="12"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Hammer Throw</label>
+<input class="u-full-width" id="wHammer" value="12"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Discus Throw</label>
+<input class="u-full-width" id="wDiscus" value="12"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Javelin</label>
+<input class="u-full-width" id="wJavelin" value="12"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Pole Vault</label>
+<input class="u-full-width" id="wPole" value="12"></input>
+</div>
+</div>
+<div class="row hiddenSport" id="editCycling">
+<div class="two columns">
+<label for="exampleEmailInput">Track</label>
+<input class="u-full-width" id="wTrack" value="34"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Road</label>
+<input class="u-full-width" id="wRoad" value="22"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">BMX</label>
+<input class="u-full-width" id="wBmx" value="22"></input>
+</div>
+<div class="two columns">
+<label for="exampleEmailInput">Mountain Bike</label>
+<input class="u-full-width" id="wMountain" value="22"></input>
+</div>
+</div>
 
     </form>
     <button class="button-primary" onclick="myDefault();">Default</button>
@@ -452,6 +484,7 @@
     </div>
 
     <script src="oly_compute.js"></script>
+    <script src="oly_compute_asm.js"></script>
     <script type="text/javascript">document.getElementById('map_canvas').width=window.innerWidth-100;document.getElementById('map_canvas').height=(window.innerWidth-100.)/1820.*700.;</script>
 
 

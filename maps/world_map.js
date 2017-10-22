@@ -61,6 +61,61 @@ function map_main(stateColors)
    g_map_canvas.addEventListener('mousemove', map_mousemove, false);
    g_map_canvas.addEventListener('mousedown', map_mousedown, false);
 
+   myRankBoxOrigin = [20,320];
+  myRankBoxWidth  = 360;
+  myRankBoxHeight = 365;
+
+  myUseRankBox = true;
+  myRankBoxFillRGB   = [255,255,255];
+  myRankBoxBorderRGB = [0,0,0];
+  myRankBoxTextRGB   = [0,0,0];
+
+
+  myRankBoxTextHeight = 12;
+  myRankBoxText = new Array();
+  for (i=1;i<31;i++){
+    for ( var abbrev in g_map_stateMap )
+    {
+          if (abbrev in stateColors){
+          var nrank = parseInt(stateColors[abbrev].rank)+1;
+          if (nrank==i){
+            if (nrank<10){nrankstr = "  "+nrank.toString();}
+            else {nrankstr = nrank.toString();}
+          var name = g_map_stateMap[abbrev].myPrettyName;
+
+
+          var value = parseFloat(stateColors[abbrev].value);
+          valueStr = value.toFixed(1).toString();
+          if (value<1000 && value >= 100){valueStr = '  '+value.toFixed(1).toString();}
+          if (value<100 && value >= 10){valueStr = '    '+value.toFixed(1).toString();}
+          if (value<10){valueStr = '      '+value.toFixed(1).toString();}
+
+          var gvalue = parseFloat(stateColors[abbrev].gold);
+          if (gvalue<1000 && gvalue >= 100){gvalueStr = ''+gvalue.toFixed(1).toString();}
+          if (gvalue<100 && gvalue >= 10){gvalueStr = '  '+gvalue.toFixed(1).toString();}
+          if (gvalue<10){gvalueStr = '    '+gvalue.toFixed(1).toString();}
+
+          var svalue = parseFloat(stateColors[abbrev].silver);
+          if (svalue<1000 && svalue >= 100){svalueStr = ''+svalue.toFixed(1).toString();}
+          if (svalue<100 && svalue >= 10){svalueStr = '  '+svalue.toFixed(1).toString();}
+          if (svalue<10){svalueStr = '    '+svalue.toFixed(1).toString();}
+
+          var bvalue = parseFloat(stateColors[abbrev].bronze);
+          if (bvalue<1000 && bvalue >= 100){bvalueStr = ''+bvalue.toFixed(1).toString();}
+          if (bvalue<100 && bvalue >= 10){bvalueStr = '  '+bvalue.toFixed(1).toString();}
+          if (bvalue<10){bvalueStr = '    '+bvalue.toFixed(1).toString();}
+          
+
+          var nrankstr = nrankstr+' '+valueStr.toString()+' '+gvalueStr.toString()+' '+svalueStr.toString()+' '+bvalueStr.toString()+'   '+ name.toString();
+          addRankBoxText(nrankstr);
+          }
+        }
+    }
+  }
+  drawRankBox(myRankBoxText);
+
+
+
 }
 
 //
@@ -327,7 +382,7 @@ function map_State(abbrev, capsName, prettyName)
 
    this.myClickCallback = null;
 
-   this.myInfoBoxOrigin = [100,490];
+   this.myInfoBoxOrigin = [1200,500];
    this.myInfoBoxWidth  = 174;
    this.myInfoBoxHeight = 160;
 
@@ -338,6 +393,8 @@ function map_State(abbrev, capsName, prettyName)
 
    this.myInfoBoxText = new Array();
    this.myInfoBoxTextHeight = 12;      /* change this if you change the font*/
+
+
 
 }
 
@@ -443,6 +500,7 @@ map_State.prototype.draw = function()
     {
        this.drawInfoBox();
     }
+
 }
 
 
@@ -588,6 +646,141 @@ map_State.prototype.setInfoBoxText = function(text, clearflag)
     if ( !justFinishedALine )
     {
        this.myInfoBoxText.push(stringBuilder);
+    }
+     
+}
+
+function drawRankBox(myRankBoxText)
+{
+   
+    g_map_context.lineWidth = 2;
+    g_map_context.fillStyle = "white";
+    g_map_context.strokeStyle = "black";
+    g_map_context.beginPath();
+    g_map_context.moveTo(myRankBoxOrigin[0],myRankBoxOrigin[1]);
+    g_map_context.lineTo(myRankBoxOrigin[0]+myRankBoxWidth,
+                     myRankBoxOrigin[1]);
+    g_map_context.lineTo(myRankBoxOrigin[0]+myRankBoxWidth,
+                     myRankBoxOrigin[1]+myRankBoxHeight);
+    g_map_context.lineTo(myRankBoxOrigin[0],
+                     myRankBoxOrigin[1]+myRankBoxHeight);
+    g_map_context.closePath();
+    g_map_context.stroke();
+    g_map_context.fill();
+    g_map_context.lineWidth = 1;
+
+    var r = myRankBoxFillRGB[0];
+    var g = myRankBoxFillRGB[1];
+    var b = myRankBoxFillRGB[2];
+
+
+    alpha = 1.0;
+   
+    r = myRankBoxBorderRGB[0];
+    g = myRankBoxBorderRGB[1];
+    b = myRankBoxBorderRGB[2];
+
+    borderColor = "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+
+    g_map_context.strokeStyle = borderColor;
+
+    g_map_context.beginPath();
+    g_map_context.moveTo(myRankBoxOrigin[0],myRankBoxOrigin[1]);
+    g_map_context.lineTo(myRankBoxOrigin[0]+myRankBoxWidth,
+                     myRankBoxOrigin[1]);
+    g_map_context.lineTo(myRankBoxOrigin[0]+myRankBoxWidth,
+                     myRankBoxOrigin[1]+myRankBoxHeight);
+    g_map_context.lineTo(myRankBoxOrigin[0],
+                     myRankBoxOrigin[1]+myRankBoxHeight);
+    g_map_context.closePath();
+    g_map_context.stroke();
+
+    r = myRankBoxFillRGB[0];
+    g = myRankBoxFillRGB[1];
+    b = myRankBoxFillRGB[2];
+    fillColor = "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+    g_map_context.fillStyle = fillColor;
+    g_map_context.fill();
+
+    r = myRankBoxTextRGB[0];
+    g = myRankBoxTextRGB[1];
+    b = myRankBoxTextRGB[2];
+
+    fillColor = "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+    g_map_context.fillStyle = fillColor;
+
+    for ( var i = 0; i < myRankBoxText.length; ++i)
+    {
+       g_map_context.fillText( myRankBoxText[i], 
+                           myRankBoxOrigin[0]+2,
+                   myRankBoxOrigin[1] + myRankBoxTextHeight * (i+1) );
+    }
+}
+
+function addRankBoxText(text)
+{
+   setRankBoxText(text,false);
+}
+
+function setRankBoxText(text, clearflag)
+{
+    if ( clearflag == undefined || clearflag == true)
+    {
+       myRankBoxText = new Array();
+    }
+
+    var splitString = text.split(" ");
+
+    var justFinishedALine = false;
+    var currentWordIndex = 0;
+    var stringBuilder = splitString[currentWordIndex];
+    var testString = stringBuilder;
+
+    currentWordIndex++;
+
+    while ( currentWordIndex <= splitString.length )
+    {
+       if ( currentWordIndex < splitString.length )
+       {
+          testString += " ";
+          testString += splitString[currentWordIndex];
+       }
+       var metrics = g_map_context.measureText(testString);
+
+       if ( metrics.width <= myRankBoxWidth-2 )
+       {
+          if ( currentWordIndex < splitString.length )
+          {
+             stringBuilder += " ";
+             stringBuilder += splitString[currentWordIndex];
+          }
+          currentWordIndex++;
+          justFinishedALine = false;
+       }
+       else
+       {
+          metrics = g_map_context.measureText(stringBuilder);
+          if (metrics.width > myRankBoxWidth-2 )
+          {
+             stringBuilder = "<Overflow text length>";
+             testString = stringBuilder;
+          }
+          myRankBoxText.push(stringBuilder);
+
+          if (currentWordIndex < splitString.length )
+             stringBuilder = splitString[currentWordIndex];
+          else
+             stringBuilder = "";
+
+          testString = stringBuilder;
+          currentWordIndex++;
+          justFinishedALine = true;
+       }
+    }
+
+    if ( !justFinishedALine )
+    {
+       myRankBoxText.push(stringBuilder);
     }
      
 }

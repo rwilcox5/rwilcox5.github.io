@@ -56,6 +56,7 @@
    var g_map_isIE9 = false;      // must detect IE9 for proper mouse position
 
 
+
    // -------------------------------------------------------------------------
    // SECTION 2:    CHANGING SETTINGS FOR INDIVIDUAL STATES
    //
@@ -161,13 +162,19 @@
          var nsilverstr = nsilver.toString()+' Silver';
          var nbronze = stateColors[abbrev].bronze;
          var nbronzestr = nbronze.toString()+' Bronze';
+         var nvalue = stateColors[abbrev].value;
+         var nvaluestr = nvalue.toString()+' Points';
+         var nrank = stateColors[abbrev].rank;
+         var nrankstr = nrank.toString()+' Rank';
+         state.addInfoBoxText(nvaluestr);
          state.addInfoBoxText(ngoldstr);
          state.addInfoBoxText(nsilverstr);
          state.addInfoBoxText(nbronzestr);
-         state.myBaseRGB = [255,stateColors[abbrev].points,stateColors[abbrev].points];
+         state.addInfoBoxText(nrankstr);
+         state.myBaseRGB = [stateColors.base1+(255-stateColors[abbrev].points)*(stateColors.max1-stateColors.base1)/255,stateColors.base2+(255-stateColors[abbrev].points)*(stateColors.max2-stateColors.base2)/255,stateColors.base3+(255-stateColors[abbrev].points)*(stateColors.max3-stateColors.base3)/255];
          }
          else{
-          state.myBaseRGB = [255,255,255];  
+          state.myBaseRGB = [stateColors.base1,stateColors.base2,stateColors.base3];  
          }
       }
 
