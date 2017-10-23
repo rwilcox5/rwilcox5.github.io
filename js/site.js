@@ -1,94 +1,36 @@
-$(document).ready(function() {
 
-  // Variables
-  var $codeSnippets = $('.code-example-body'),
-      $nav = $('.navbar'),
-      $body = $('body'),
-      $window = $(window),
-      $popoverLink = $('[data-popover]'),
-      navOffsetTop = $nav.offset().top,
-      $document = $(document),
-      entityMap = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': '&quot;',
-        "'": '&#39;',
-        "/": '&#x2F;'
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction(elementID) {
+    document.getElementById(elementID).classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropnfl')) {
+    var nflDropdown = document.getElementById("nflDropdown");
+      if (nflDropdown.classList.contains('show')) {
+        nflDropdown.classList.remove('show');
       }
-
-  function init() {
-    $window.on('scroll', onScroll)
-    $window.on('resize', resize)
-    $popoverLink.on('click', openPopover)
-    $document.on('click', closePopover)
-    $('a[href^="#"]').on('click', smoothScroll)
-    buildSnippets();
   }
-
-  function smoothScroll(e) {
-    e.preventDefault();
-    $(document).off("scroll");
-    var target = this.hash,
-        menu = target;
-    $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top-40
-    }, 0, 'swing', function () {
-        window.location.hash = target;
-        $(document).on("scroll", onScroll);
-    });
+  if (!e.target.matches('.dropncaaf')) {
+    var ncaafDropdown = document.getElementById("ncaafDropdown");
+      if (ncaafDropdown.classList.contains('show')) {
+        ncaafDropdown.classList.remove('show');
+      }
   }
-
-  function openPopover(e) {
-    e.preventDefault()
-    closePopover();
-    var popover = $($(this).data('popover'));
-    popover.toggleClass('open')
-    e.stopImmediatePropagation();
+  if (!e.target.matches('.dropmlb')) {
+    var mlbDropdown = document.getElementById("mlbDropdown");
+      if (mlbDropdown.classList.contains('show')) {
+        mlbDropdown.classList.remove('show');
+      }
   }
-
-  function closePopover(e) {
-    if($('.popover.open').length > 0) {
-      $('.popover').removeClass('open')
-    }
+  if (!e.target.matches('.dropolympic')) {
+    var olympicDropdown = document.getElementById("olympicDropdown");
+      if (olympicDropdown.classList.contains('show')) {
+        olympicDropdown.classList.remove('show');
+      }
   }
-
-  $("#button").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#elementtoScrollToID").offset().top
-    }, 2000);
-});
-
-  function resize() {
-    $body.removeClass('has-docked-nav')
-    navOffsetTop = $nav.offset().top
-    onScroll()
-  }
-
-  function onScroll() {
-    if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
-      $body.addClass('has-docked-nav')
-    }
-    if(navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
-      $body.removeClass('has-docked-nav')
-    }
-  }
-
-  function escapeHtml(string) {
-    return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
-    });
-  }
-
-  function buildSnippets() {
-    $codeSnippets.each(function() {
-      var newContent = escapeHtml($(this).html())
-      $(this).html(newContent)
-    })
-  }
+}
 
 
-  init();
-
-});

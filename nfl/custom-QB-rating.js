@@ -22,9 +22,7 @@ function loadModule(filename) {
 }
 
 function runRating(){
-loadModule('compute.wasm').then(instance => {
-      const makeTable = instance.exports._makeTable;
-      const sendTen = instance.exports._sendTen;
+
       compr = document.getElementById('compWeight').value;
       yardr = document.getElementById('yardsWeight').value;
       tdr = document.getElementById('tdWeight').value;
@@ -41,15 +39,15 @@ loadModule('compute.wasm').then(instance => {
       maxTd = document.getElementById('tdMax').value*100;
       lengthType = document.getElementById('lengthType').value;
       nweeks = document.getElementById('nweeks').value;
-      makeTable(compr,yardr,tdr,intr,nrows,minAtt,minComp,maxComp,minYards,maxYards,minInt,maxInt,minTd,maxTd,lengthType,nweeks);
-      retdouble = sendTen(5,0);
+      _makeTable(compr,yardr,tdr,intr,nrows,minAtt,minComp,maxComp,minYards,maxYards,minInt,maxInt,minTd,maxTd,lengthType,nweeks);
+      retdouble = _sendTen(5,0);
       var table = document.getElementById("myTable");
       var ii = 0;
       for (i=0;i<10;i++){
         table.insertRow(i); 
-        table.rows[i].insertCell(0); table.rows[i].cells[0].innerHTML = sendTen(7,i,lengthType);
-        for (ii=0;ii<6;ii++){table.rows[i].insertCell(ii+1); table.rows[i].cells[ii+1].innerHTML = sendTen(ii,i,lengthType);}
-        table.rows[i].insertCell(6); table.rows[i].cells[6].innerHTML = (sendTen(6,i,lengthType)*1./100).toFixed(1);
+        table.rows[i].insertCell(0); table.rows[i].cells[0].innerHTML = _sendTen(7,i,lengthType);
+        for (ii=0;ii<6;ii++){table.rows[i].insertCell(ii+1); table.rows[i].cells[ii+1].innerHTML = _sendTen(ii,i,lengthType);}
+        table.rows[i].insertCell(6); table.rows[i].cells[6].innerHTML = (_sendTen(6,i,lengthType)*1./100).toFixed(1);
 
       }
 
@@ -63,7 +61,7 @@ loadModule('compute.wasm').then(instance => {
       for (i=maxi;i>-1;i--){my_string += back_string[i];}
 
 
-});
+
 }
 
 function nflDefault(){

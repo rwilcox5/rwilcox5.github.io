@@ -20,16 +20,14 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-  <link rel="stylesheet" href="css/github-prettify-theme.css">
-  <script src="js/site.js"></script>
+
+  <script src="../js/site.js"></script>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -42,111 +40,55 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="header">
-      <h2 class="title">Gault Sports NCAA Football Recruiting</h2>
+      <h2 class="title">Gault Sports NFL Parlays</h2>
     </section>
 
     <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href="#intro">About</a></li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#" data-popover="#ncaafNavPopover">NCAA Football</a>
-            <div id="ncaafNavPopover" class="popover">
-              <ul class="popover-list">
-                <li class="popover-item">
-                  <a class="popover-link" href="recruiting.html">Recruiting</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#typography">Typography</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#buttons">Buttons</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#forms">Forms</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#lists">Lists</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#code">Code</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#tables">Tables</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#queries">Queries</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#utilities">Utilities</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#" data-popover="#nflNavPopover">NFL</a>
-            <div id="nflNavPopover" class="popover">
-              <ul class="popover-list">
-                <li class="popover-item">
-                  <a class="popover-link" href="#grid">Grid</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#typography">Typography</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#buttons">Buttons</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#forms">Forms</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#lists">Lists</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#code">Code</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#tables">Tables</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#queries">Queries</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#utilities">Utilities</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#" data-popover="#mlbNavPopover">MLB</a>
-            <div id="mlbNavPopover" class="popover">
-              <ul class="popover-list">
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton">On Github</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#browser-support">Browsers</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#license">License</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#extensions">Extensions</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton/releases">Versions</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#colophon">Colophon</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+    
+    <div class="navbar">
+      <div class="dropdown">
+        <a class="dropbtn" href="../about.html"><button class="dropbtn">ABOUT</button>
+        </a>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropnfl" onclick="myFunction('nflDropdown');">NFL
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="nflDropdown">
+          <a href="../nfl/custom-QB-rating.html">Custom QB Ratings</a>
+          <a href="../nfl/game-breakdowns.html">Game Breakdowns</a>
+          <a href="../nfl/nfl-parlays.html">Parlays</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropncaaf" onclick="myFunction('ncaafDropdown');">NCAAF
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="ncaafDropdown">
+          <a href="../ncaaf/recruiting.html">Team Recruiting Rankings</a>
+          <a href="../ncaaf/ap-poll.html">Weighted AP Poll</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropmlb" onclick="myFunction('mlbDropdown');">MLB
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="mlbDropdown">
+          <a href="../mlb/epfip.html">epFIP</a>
+          <a href="../mlb/pitch-charts.html">Pitch Charts</a>
+          <a href="../mlb/war-by-age.html">WAR by Age</a>
+          <a href="../mlb/pie-charts.html">Pie Charts</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropolympic" onclick="myFunction('olympicDropdown');">Olympics
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="olympicDropdown">
+          <a href="../olympics/map.html">Olympic Map</a>
+        </div>
+      </div> 
+    </div>
 
     <!-- Tables -->
     <div class="docs-section" id="tables">
@@ -560,7 +502,7 @@
     </div>
 
   </div>
-  <script src="compute.js"></script>
+  
   <!-- Google Analytics -->
   <script type="text/javascript">
 
@@ -575,8 +517,7 @@
     })();
 
   </script>
-  <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/picol" title="Picol">Picol</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-  <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+
 
 
 </body>

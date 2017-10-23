@@ -1,20 +1,23 @@
-function createBG(){
-	radar_initCanvas();
-	center_x = 300; center_y = 300; side_step = 50;
-	colors = ['#f00','#0f0','#00f','#ff0','#0ff','#f0f'];
-	fill_hex([50,60,70,80,40,30],colors,center_x,center_y,side_step,6*side_step);
+function createBG(canvas_id,size_canvas,ratings){
+	center_x = size_canvas/2;
+	center_y = size_canvas/2;
+	side_step= size_canvas/13;
+	radar_initCanvas(canvas_id);
+	colors = ['#f00','#00f','#0f0','#f00','#00f','#0f0'];
+	fill_hex(ratings,colors,center_x,center_y,side_step,6*side_step);
 	for (i=1;i<7;i++){draw_hex(center_x,center_y,side_step*i);}
 	
 	draw_lines(center_x,center_y,side_step,side_step*6);
-	write_text();
+	write_text(center_x,center_y);
 	
 
 
 }
 
-function radar_initCanvas()
+function radar_initCanvas(canvas_id)
 {
-   radar_canvas = document.getElementById('radar_canvas');
+	console.log(canvas_id);
+   radar_canvas = document.getElementById(canvas_id);
 
    if (!radar_canvas.getContext)
    {
@@ -118,39 +121,39 @@ function fill_hex(ratings,colors,center_x,center_y,side_start,side_length){
 	radar_context.fill();
 }
 
-function write_text(){
+function write_text(center_x,center_y){
+	radar_context.fillStyle = 'black';
 	radar_context.textAlign = "center";
-	radar_context.fillText("Your Label Here", 300, 37);
+	radar_context.fillText("Off Pass Yards", center_x, 44*center_y/300);
 
 	radar_context.save();
- 	radar_context.translate(530,162);
+ 	radar_context.translate(520*center_x/300,170*center_y/300);
  	radar_context.rotate(Math.PI/3);
  	radar_context.textAlign = "center";
- 	radar_context.fillText("Your Label Here", 0, 0);
+ 	radar_context.fillText("Off Rush Yards", 0, 0);
  	radar_context.restore();
 
  	radar_context.save();
- 	radar_context.translate(65,430);
+ 	radar_context.translate(78*center_x/300,430*center_y/300);
  	radar_context.rotate(Math.PI/3+Math.PI);
  	radar_context.textAlign = "center";
- 	radar_context.fillText("Your Label Here", 0, 0);
+ 	radar_context.fillText("Def Rush Yards", 0, 0);
  	radar_context.restore();
 
  	radar_context.textAlign = "center";
- 	radar_context.fillText("Your Label Here", 300, 575);
+ 	radar_context.fillText("Def Pass Yards", center_x, 555*center_y/300+10);
 
  	radar_context.save();
- 	radar_context.translate(69,162);
+ 	radar_context.translate(78*center_x/300,170*center_y/300);
  	radar_context.rotate(-Math.PI/3);
  	radar_context.textAlign = "center";
- 	radar_context.fillText("Your Label Here", 0, 0);
+ 	radar_context.fillText("Off Points", 0, 0);
  	radar_context.restore();
 
  	radar_context.save();
- 	radar_context.translate(532,430);
+ 	radar_context.translate(520*center_x/300,432*center_y/300);
  	radar_context.rotate(-Math.PI/3-Math.PI);
  	radar_context.textAlign = "center";
- 	radar_context.fillText("Your Label Here", 0, 0);
+ 	radar_context.fillText("Def Points", 0, 0);
  	radar_context.restore();
 }
-createBG();

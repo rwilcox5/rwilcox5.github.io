@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Skeleton: Responsive CSS Boilerplate</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="../js/site.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body class="code-snippets-visible">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="header">
+      <h2 class="title">Gault Sports Pitch Charts</h2>
+    </section>
+
+    <div class="navbar-spacer"></div>
+    
+    <div class="navbar">
+      <div class="dropdown">
+        <a class="dropbtn" href="../about.html"><button class="dropbtn">ABOUT</button>
+        </a>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropnfl" onclick="myFunction('nflDropdown');">NFL
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="nflDropdown">
+          <a href="../nfl/custom-QB-rating.html">Custom QB Ratings</a>
+          <a href="../nfl/game-breakdowns.html">Game Breakdowns</a>
+          <a href="../nfl/nfl-parlays.html">Parlays</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropncaaf" onclick="myFunction('ncaafDropdown');">NCAAF
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="ncaafDropdown">
+          <a href="../ncaaf/recruiting.html">Team Recruiting Rankings</a>
+          <a href="../ncaaf/ap-poll.html">Weighted AP Poll</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropmlb" onclick="myFunction('mlbDropdown');">MLB
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="mlbDropdown">
+          <a href="../mlb/epfip.html">epFIP</a>
+          <a href="../mlb/pitch-charts.html">Pitch Charts</a>
+          <a href="../mlb/war-by-age.html">WAR by Age</a>
+          <a href="../mlb/pie-charts.html">Pie Charts</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn dropolympic" onclick="myFunction('olympicDropdown');">Olympics
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="olympicDropdown">
+          <a href="../olympics/map.html">Olympic Map</a>
+        </div>
+      </div> 
+    </div>
+
+    
+
+    <button class="button-primary" onclick="runRating();">Generate</button>
+    <table id="myTable">
+    </table>
+  </div>
+
+    <script src="pitch-charts.js"></script>
+    <script src="pitch-charts-asm.js"></script>
+
+
+</body>
+</html>
