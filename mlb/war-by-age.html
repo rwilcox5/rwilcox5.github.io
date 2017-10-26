@@ -27,6 +27,7 @@
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="../js/site.js"></script>
+  
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -90,12 +91,32 @@
     </div>
 
     
+    <form>
+      <div class="row">
+        <div class="two columns">
+          <label for="exampleEmailInput">First Year</label>
+          <input class="u-full-width" id="year0" value="2015"></input>
+        </div>
+        <div class="two columns">
+          <label for="exampleEmailInput">Last Year</label>
+          <input class="u-full-width" id="year1" value="2017"></input>
+        </div>
+        <div class="two columns">
+          <label for="exampleEmailInput">Comp First</label>
+          <input class="u-full-width" id="cyear0" value="2000"></input>
+        </div>
+        <div class="two columns">
+          <label for="exampleEmailInput">Comp Last</label>
+          <input class="u-full-width" id="cyear1" value="2017"></input>
+        </div>
 
+      </div>
+    </form>
     <button class="button-primary" onclick="runRating();">Generate</button>
-    <table id="myTable">
-    </table>
+    
+    <div id="canvas_spot"></div>
   </div>
-
+    <script src="../charts/pop-chart.js"></script>
     <script src="war-by-age.js"></script>
     <script src="war-by-age-asm.js"></script>
 
